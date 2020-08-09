@@ -4,6 +4,7 @@ import Timeline.ID.TimeSpace (TimeSpaceID)
 import Timeline.ID.Timeline (TimelineID)
 import Timeline.ID.Event (EventID)
 import Timeline.ID.TimeSpan (TimeSpanID)
+import Timeline.ID.ChildOrSiblingParentID (ChildOrSiblingParentID)
 
 import Prelude
 import Data.Maybe (Maybe (..))
@@ -30,15 +31,17 @@ main = launchAff_ $ runSpec' (defaultConfig {timeout = Nothing}) [consoleReporte
 tests :: SpecT Aff Unit Identity Unit
 tests = do
   describe "Json" do
-    jsonTest "TimeSpace" (Proxy :: Proxy TimeSpaceID)
-    jsonTest "Timeline" (Proxy :: Proxy TimelineID)
-    jsonTest "Event" (Proxy :: Proxy EventID)
-    jsonTest "TimeSpan" (Proxy :: Proxy TimeSpanID)
+    jsonTest "TimeSpaceID" (Proxy :: Proxy TimeSpaceID)
+    jsonTest "TimelineID" (Proxy :: Proxy TimelineID)
+    jsonTest "EventID" (Proxy :: Proxy EventID)
+    jsonTest "TimeSpanID" (Proxy :: Proxy TimeSpanID)
+    jsonTest "ChildOrSiblingParentID" (Proxy :: Proxy ChildOrSiblingParentID)
   describe "Binary" do
-    binaryTest "TimeSpace" (Proxy :: Proxy TimeSpaceID)
-    binaryTest "Timeline" (Proxy :: Proxy TimelineID)
-    binaryTest "Event" (Proxy :: Proxy EventID)
-    binaryTest "TimeSpan" (Proxy :: Proxy TimeSpanID)
+    binaryTest "TimeSpaceID" (Proxy :: Proxy TimeSpaceID)
+    binaryTest "TimelineID" (Proxy :: Proxy TimelineID)
+    binaryTest "EventID" (Proxy :: Proxy EventID)
+    binaryTest "TimeSpanID" (Proxy :: Proxy TimeSpanID)
+    binaryTest "ChildOrSiblingParentID" (Proxy :: Proxy ChildOrSiblingParentID)
   where
     jsonTest :: forall a
               . Arbitrary a
