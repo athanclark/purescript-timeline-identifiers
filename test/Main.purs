@@ -5,6 +5,7 @@ import Timeline.ID.Timeline (TimelineID)
 import Timeline.ID.Event (EventID)
 import Timeline.ID.TimeSpan (TimeSpanID)
 import Timeline.ID.ChildOrSiblingParent (ChildOrSiblingParentID)
+import Timeline.ID.RootTimeSpaceOrParent (RootTimeSpaceOrParentID)
 
 import Prelude
 import Data.Maybe (Maybe (..))
@@ -36,12 +37,14 @@ tests = do
     jsonTest "EventID" (Proxy :: Proxy EventID)
     jsonTest "TimeSpanID" (Proxy :: Proxy TimeSpanID)
     jsonTest "ChildOrSiblingParentID" (Proxy :: Proxy ChildOrSiblingParentID)
+    jsonTest "RootTimeSpaceOrParentID" (Proxy :: Proxy RootTimeSpaceOrParentID)
   describe "Binary" do
     binaryTest "TimeSpaceID" (Proxy :: Proxy TimeSpaceID)
     binaryTest "TimelineID" (Proxy :: Proxy TimelineID)
     binaryTest "EventID" (Proxy :: Proxy EventID)
     binaryTest "TimeSpanID" (Proxy :: Proxy TimeSpanID)
     binaryTest "ChildOrSiblingParentID" (Proxy :: Proxy ChildOrSiblingParentID)
+    binaryTest "RootTimeSpaceOrParentID" (Proxy :: Proxy RootTimeSpaceOrParentID)
   where
     jsonTest :: forall a
               . Arbitrary a
