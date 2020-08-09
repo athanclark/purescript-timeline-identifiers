@@ -1,4 +1,4 @@
-module Timeline.ID.ChildOrSiblingParentID where
+module Timeline.ID.ChildOrSiblingParent where
 
 import Timeline.ID.TimeSpace (TimeSpaceID)
 import Timeline.ID.Timeline (TimelineID)

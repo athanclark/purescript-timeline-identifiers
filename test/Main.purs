@@ -4,7 +4,7 @@ import Timeline.ID.TimeSpace (TimeSpaceID)
 import Timeline.ID.Timeline (TimelineID)
 import Timeline.ID.Event (EventID)
 import Timeline.ID.TimeSpan (TimeSpanID)
-import Timeline.ID.ChildOrSiblingParentID (ChildOrSiblingParentID)
+import Timeline.ID.ChildOrSiblingParent (ChildOrSiblingParentID)
 
 import Prelude
 import Data.Maybe (Maybe (..))
